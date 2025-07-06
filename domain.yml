@@ -4,7 +4,7 @@ intents:
   - consultar_flujo
 
 entities:
-  - id_flujo
+  - NIT
 
 slots:
   id_flujo:
@@ -12,7 +12,7 @@ slots:
     influence_conversation: true
 
 responses:
-  utter_pedir_id_flujo:
+  utter_pedir_NIT:
     - text: "¿Podrías proporcionarme el ID del flujo que deseas revisar?"
 
   utter_error_no_info:
