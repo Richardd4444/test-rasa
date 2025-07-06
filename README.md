@@ -1,6 +1,6 @@
 # 🤖 Asistente Virtual Rasa en AWS (t3.small)
 
-Este repositorio contiene un agente Rasa que consulta el estado de un flujo de negocio a partir de un `id_flujo`, usando una Lambda expuesta mediante API Gateway. Está optimizado para ser desplegado en una instancia EC2 tipo `t3.small`.
+Este repositorio contiene un agente Rasa que consulta el estado de un flujo de negocio a partir de un `NIT`, usando una Lambda expuesta mediante API Gateway. Está optimizado para ser desplegado en una instancia EC2 tipo `t3.small`.
 
 ---
 
@@ -39,6 +39,7 @@ rasa-agente/
 
 ```bash
 ssh -i "tu-llave.pem" ubuntu@<IP_PUBLICA>
+# `tu-llave.pem` hace referencia a la llave generada por EC2
 ```
 
 ### 2. Instala Docker y Docker Compose
