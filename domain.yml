@@ -1,0 +1,22 @@
+version: "3.1"
+
+intents:
+  - consultar_flujo
+
+entities:
+  - id_flujo
+
+slots:
+  id_flujo:
+    type: text
+    influence_conversation: true
+
+responses:
+  utter_pedir_id_flujo:
+    - text: "¿Podrías proporcionarme el ID del flujo que deseas revisar?"
+
+  utter_error_no_info:
+    - text: "Lo siento, no encontré información para ese flujo."
+
+actions:
+  - action_consultar_flujo_con_error

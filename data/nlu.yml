@@ -1,0 +1,7 @@
+version: "3.1"
+nlu:
+- intent: consultar_flujo
+  examples: |
+    - ¿Qué pasó con el flujo flujo_abc_123?
+    - Dame información del flujo cliente_001
+    - ¿Cuál fue el error en el flujo abc123?
