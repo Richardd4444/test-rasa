@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+  rasa:
+    image: rasa/rasa:3.6.8
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command: run --enable-api --cors "*"
+    deploy:
+      resources:
+        limits:
+          memory: 1024M  # 1 GB para el motor Rasa
+
+  action_server:
+    image: rasa/rasa-sdk:3.6.8
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+    deploy:
+      resources:
+        limits:
+          memory: 512M  # 512 MB para el servidor de acciones
