@@ -18,7 +18,7 @@ class ActionConsultarFlujoConError(Action):
             return []
 
         try:
-            response = requests.post("https://mi-api-gateway/errors", json={"NIT": nit})
+            response = requests.post("https://m1zngptzf5.execute-api.us-east-2.amazonaws.com/dev/test-virtual-assistant", json={"NIT": nit})
             data = response.json()
             mensaje = data.get("mensaje", "No se encontró información para el flujo.")
         except Exception as e:
