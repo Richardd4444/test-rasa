@@ -11,14 +11,14 @@ class ActionConsultarFlujoConError(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        id_flujo = tracker.get_slot("id_flujo")
+        nit = tracker.get_slot("NIT")
 
-        if not id_flujo:
+        if not nit:
             dispatcher.utter_message(response="utter_pedir_id_flujo")
             return []
 
         try:
-            response = requests.post("https://mi-api-gateway/errors", json={"id_flujo": id_flujo})
+            response = requests.post("https://mi-api-gateway/errors", json={"NIT": nit})
             data = response.json()
             mensaje = data.get("mensaje", "No se encontró información para el flujo.")
         except Exception as e:
